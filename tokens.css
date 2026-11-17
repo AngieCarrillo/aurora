@@ -12,7 +12,7 @@
   --color-ink: #141414; --color-ink-2: #2d2d2d; --color-muted: #625d58;
   --color-rule: #dbd8d3; --color-coral: #ff8e70; --color-coral-ink: #b8402f; --color-lime-soft: #e8f9a8; --color-on-ink: #fffee9; --color-on-ink-muted: #c9c3bd;
   --color-accent: #c1f11d; --color-accent-ink: #141414; --color-focus: #d85a4b;
-  --font-display: "Cormorant", ui-serif, serif; --font-body: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
+  --font-display: "Freight Big Pro", Georgia, ui-serif, serif; --font-body: "Proxima Nova", ui-sans-serif, system-ui, sans-serif; --font-outlier: "Commuters Sans", var(--font-body);
   --radius-card: 4px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.01em;
 }
