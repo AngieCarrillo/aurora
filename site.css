@@ -202,3 +202,17 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
 .statement, .figures b, .receipts b, .steps-map .n, .tl b, .plan b, .jobs li::before { font-variant-numeric: var(--nums-display); }
 .filters { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); }
 @media (max-width: 60rem) { .filters { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); } }
+.hero-thesis { display: grid; gap: var(--space-md); }
+.thesis-line { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); line-height: 1.2; }
+.hero-thesis .jobs { gap: var(--space-md); }
+.hero-thesis .jobs li { padding-top: var(--space-sm); border-top-width: 1px; }
+.hero-thesis .jobs li::before { font-size: var(--text-xl); line-height: 1; }
+.hero-thesis .jobs h3 { font-size: var(--text-lg); margin-bottom: var(--space-2xs); }
+.hero-thesis .jobs p { font-size: var(--text-sm); color: var(--color-ink-2); }
+.total-line { font-size: var(--text-md); color: var(--color-muted); }
+.side { display: grid; gap: var(--space-lg); padding-left: var(--space-lg); border-left: var(--rule-hair) solid var(--color-rule); align-content: start; }
+.side .assess { border-top: 0; padding-top: 0; }
+.side .panel { padding-left: 0; border-left: 0; max-height: calc(100dvh - var(--nav-h) - 300px); min-height: 320px; }
+@media (max-width: 75rem) { .side { grid-column: 1 / -1; padding-left: 0; border-left: 0; } .side .panel { max-height: 560px; } }
+@media (max-width: 60rem) { .side .panel { max-height: none; } }
+.hero h1 { font-size: clamp(2.25rem, 2.6vw + 0.75rem, 3.5rem); max-width: 16ch; }

@@ -17,7 +17,7 @@
  <div class="container">
   <a class="wordmark" href="./">Angelica Carrillo</a>
   <nav class="nav-links" aria-label="Main">
-   <a class="hide-s" href="#thesis">The thesis</a>
+   <a class="hide-s" href="#steps-section">Each step</a>
    <a class="hide-s" href="#task-2">One founder</a>
    <a class="btn" href="why-hire-me/">Why hire me</a>
   </nav>
@@ -28,14 +28,15 @@
 <section id="task-1" class="hero">
  <div class="container hero-grid">
   <div class="hero-intro">
-   <h1>Who can back her in Latin America</h1>
-   <p>__TOTAL__ investors, programs and prizes, country by country. Click a country to see who’s there.</p>
-   <div class="assess">
-    <h2>My LATAM self-assessment</h2>
-    <div class="meter"><span>Network</span><span class="meter-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><b>4 of 5</b></div>
-    <div class="meter"><span>Ecosystem knowledge</span><span class="meter-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><b>5 of 5</b></div>
-    <p>Strongest in Colombia, Mexico, Peru and the US to LATAM corridor. Brazil and Central America are where I’d lean on intros first.</p>
+   <h1>Mapping LATAM capital for women founders</h1>
+   <div class="hero-thesis">
+    <p class="thesis-line">Aurora spotlights her first. It can write her first check. From there, my job in investor relations comes down to two things.</p>
+    <ol class="jobs">
+     <li><div><h3>Elite investors in her corner</h3><p>A line of investors who already know her, so she finds her lead and can close a round the day she decides to.</p></div></li>
+     <li><div><h3>Enough equity to keep leading</h3><p>The right lead and fair first terms, so she still owns enough of her company when the big rounds come.</p></div></li>
+    </ol>
    </div>
+   <p id="totalLine" class="total-line">__TOTAL__ investors, programs and prizes, country by country. Click a country to see who’s there.</p>
    <div>
     <p class="filter-label">Filter by relationship</p>
     <div class="chips" id="relChips" role="group" aria-label="Filter by relationship"></div>
@@ -50,7 +51,15 @@
    <div class="legend"><span><span class="sw sw-1"></span>1 to 3</span><span><span class="sw sw-2"></span>4 to 15</span><span><span class="sw sw-3"></span>16 to 40</span><span><span class="sw sw-4"></span>40+ players</span></div>
    <button class="btn" id="globalBtn">Global players in LATAM</button>
   </div>
-  <div class="panel" id="panel" aria-live="polite"></div>
+  <div class="side">
+   <div class="assess">
+    <h2>My LATAM self-assessment</h2>
+    <div class="meter"><span>Network</span><span class="meter-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><b>4 of 5</b></div>
+    <div class="meter"><span>Ecosystem knowledge</span><span class="meter-bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><b>5 of 5</b></div>
+    <p>Strongest in Colombia, Mexico, Peru and the US to LATAM corridor. Brazil and Central America are where I’d lean on intros first.</p>
+   </div>
+   <div class="panel" id="panel" aria-live="polite"></div>
+  </div>
  </div>
  <div class="container">
   <div class="sources">
@@ -61,19 +70,9 @@
  </div>
 </section>
 
-<section id="thesis" class="section">
+<section id="steps-section" class="section">
  <div class="container">
-  <div class="thesis">
-   <p class="statement">Aurora spotlights her first. It can write her first check.</p>
-   <div>
-    <p class="lead" style="margin-bottom:var(--space-xl)">From there, my job in investor relations comes down to two things.</p>
-    <ol class="jobs">
-     <li><div><h3>Elite investors in her corner</h3><p>A line of investors who already know her, so she finds her lead and can close a round the day she decides to.</p></div></li>
-     <li><div><h3>Enough equity to keep leading</h3><p>The right lead and fair first terms, so she still owns enough of her company when the big rounds come.</p></div></li>
-    </ol>
-   </div>
-  </div>
-  <div class="steps-intro">
+  <div class="steps-intro" style="margin-top:0">
    <h2>Who can act at each step</h2>
    <p>That’s how I map the region. Every partner also gets one honest label: warm (I know them), intro via network (someone I know does), or cold.</p>
   </div>
@@ -88,17 +87,6 @@
  </div>
 </section>
 
-<section class="section band-ink">
- <div class="container">
-  <div class="head"><h2>Women founders in LATAM fish in a small pond, with a smaller net</h2></div>
-  <div class="figures">
-   <div><b>$4.1B</b><p>raised by all LATAM startups in 2025, across 681 rounds.</p><p class="src">Cuántico VP and Startuplinks, via Bloomberg Línea</p></div>
-   <div><b>$73.6B</b><p>raised by female-founded startups in the US alone in 2025, about 18 times the whole LATAM market.</p><p class="src">TechRT, 2025 female founder statistics</p></div>
-   <div><b>4.5%</b><p>of VC in Mexico goes to women-led teams.</p><p class="src">Finnosummit</p></div>
-  </div>
-  <p class="after">That gap is why the map goes wide, and why I point founders to the US when they need a lead investor. Successful founders in these communities become the next angels.</p>
- </div>
-</section>
 
 <section class="section">
  <div class="container">
@@ -116,6 +104,18 @@
    <thead><tr><th>Partner</th><th>Type</th><th>Tier</th><th>Region fit</th><th>Why them</th></tr></thead>
    <tbody id="ptable"></tbody>
   </table></div>
+ </div>
+</section>
+
+<section class="section band-ink">
+ <div class="container">
+  <div class="head"><h2>Women founders in LATAM fish in a small pond, with a smaller net</h2></div>
+  <div class="figures">
+   <div><b>$4.1B</b><p>raised by all LATAM startups in 2025, across 681 rounds.</p><p class="src">Cuántico VP and Startuplinks, via Bloomberg Línea</p></div>
+   <div><b>$73.6B</b><p>raised by female-founded startups in the US alone in 2025, about 18 times the whole LATAM market.</p><p class="src">TechRT, 2025 female founder statistics</p></div>
+   <div><b>4.5%</b><p>of VC in Mexico goes to women-led teams.</p><p class="src">Finnosummit</p></div>
+  </div>
+  <p class="after">That gap is why the map goes wide, and why I point founders to the US when they need a lead investor. Successful founders in these communities become the next angels.</p>
  </div>
 </section>
 
@@ -485,7 +485,7 @@ function render(){
   panel.innerHTML=h;
 }
 relChips("relChips",()=>relSel,k=>{relSel=k},()=>render());
-document.querySelector("#task-1 p").innerHTML=document.querySelector("#task-1 p").innerHTML.replace("__TOTAL__",total);
+document.getElementById("totalLine").innerHTML=document.getElementById("totalLine").innerHTML.replace("__TOTAL__",total);
 render();
 
 // partner table
