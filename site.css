@@ -268,3 +268,12 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
 svg.map path.sel { fill: var(--color-aurora-blue) !important; }
 svg.map text.on-sel { fill: var(--color-on-ink); }
 .btn { font-family: var(--font-outlier); font-weight: 600; letter-spacing: 0; }
+.act-head { margin: var(--space-lg) 0 var(--space-xs); font-size: var(--text-sm); font-weight: 700; color: var(--color-ink); }
+.act { list-style: none; margin: 0; padding: 0; border-top: var(--rule-hair) solid var(--color-ink); }
+.act li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); column-gap: var(--space-sm); padding-block: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule); align-items: baseline; }
+.act b { grid-row: span 2; font-family: var(--font-display); font-weight: 400; font-size: var(--text-xl); line-height: 1; font-variant-numeric: var(--nums-display); }
+.act span { font-weight: 600; font-size: var(--text-sm); color: var(--color-ink); }
+.act small { font-size: var(--text-xs); color: var(--color-muted); }
+.hero-top > .jobs .act li { counter-increment: none; display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); column-gap: var(--space-sm); gap: 0 var(--space-sm); padding: var(--space-xs) 0; border-top: 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.hero-top > .jobs .act li::before { content: none; }
+.hero-top > .jobs .act small { font-size: var(--text-xs); color: var(--color-muted); }
