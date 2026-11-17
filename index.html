@@ -508,11 +508,13 @@ document.querySelectorAll("svg.map path").forEach(p=>{
   const go=()=>{current=name;render()};
   p.addEventListener("click",go); p.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}});
 });
+(()=>{const ps=[...document.querySelectorAll("svg.map path")].filter(p=>counts[p.dataset.name]).map(p=>{const b=p.getBBox();return {n:p.dataset.name,x:b.x+b.width/2,y:b.y+b.height/2}});const ts=[...document.querySelectorAll("svg.map text")];const pairs=[];ts.forEach((t,ti)=>{const x=+t.getAttribute("x"),y=+t.getAttribute("y");ps.forEach(c=>pairs.push({ti,n:c.n,d:(c.x-x)**2+(c.y-y)**2}))});pairs.sort((a,b)=>a.d-b.d);const usedT=new Set(),usedN=new Set();pairs.forEach(q=>{if(usedT.has(q.ti)||usedN.has(q.n))return;usedT.add(q.ti);usedN.add(q.n);ts[q.ti].dataset.name=q.n;ts[q.ti].textContent=counts[q.n]})})();
 document.getElementById("globalBtn").addEventListener("click",()=>{current="Global";render()});
 const chipBox=document.getElementById("catChips");
 Object.entries(CAT).forEach(([k,v])=>{const b=document.createElement("button");b.className="chip";b.textContent=v;b.setAttribute("aria-pressed","false");b.onclick=()=>{activeCats.has(k)?activeCats.delete(k):activeCats.add(k);b.setAttribute("aria-pressed",activeCats.has(k));render()};chipBox.appendChild(b)});
 function render(){
   document.querySelectorAll("svg.map path").forEach(p=>p.classList.toggle("sel",p.dataset.name===current));
+  document.querySelectorAll("svg.map text").forEach(t=>t.classList.toggle("on-sel",t.dataset.name===current));
   let list=D.filter(p=>p.k===current&&(!activeCats.size||activeCats.has(p.c))&&(relSel==="all"||p.r===relSel));
   const panel=document.getElementById("panel");
   const order={W:0,N:1,C:2};

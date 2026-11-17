@@ -10,6 +10,7 @@
   --nums-display: lining-nums tabular-nums;
   --map-0: #ece9e2; --map-1: #eef7c7; --map-2: #d6f06b; --map-3: #c1f11d; --map-4: #8fb80f;
   --color-rel-n: #ffd9cc;
+  --color-aurora-blue: #335eaa;
   --nav-h: 64px;
 }
 
@@ -260,3 +261,5 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
 .hero-top > .jobs h3 { font-size: var(--text-lg); margin-bottom: var(--space-2xs); }
 .hero-top > .jobs p { font-size: var(--text-sm); color: var(--color-ink-2); }
 .hero-top { row-gap: var(--space-xl); }
+svg.map path.sel { fill: var(--color-aurora-blue) !important; }
+svg.map text.on-sel { fill: var(--color-on-ink); }
