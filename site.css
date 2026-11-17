@@ -284,3 +284,13 @@ svg.map text.on-sel { fill: var(--color-on-ink); }
 .hero-top { align-items: end; }
 .hero-line { font-size: var(--text-xl); line-height: 1.3; max-width: 44ch; }
 .hero-top .hero-intro { gap: var(--space-md); }
+.cs-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--space-3xl); align-items: start; }
+.cs-grid > .jobs { grid-template-columns: minmax(0, 1fr) !important; gap: var(--space-xl); }
+.cs-grid .act-head { margin-top: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-xl); }
+.cs-grid > .jobs > li { border-top: 0; padding-top: 0; }
+.cs-grid .act li { counter-increment: none; display: grid; grid-template-columns: 3.75rem minmax(0, 1fr); column-gap: var(--space-sm); padding: var(--space-sm) 0; border-top: 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.cs-grid .act li::before { content: none; }
+.cs-grid > .jobs li::before { font-size: var(--text-xl); line-height: 1; }
+.cs-grid > .jobs h3 { font-size: var(--text-lg); margin-bottom: var(--space-2xs); }
+.cs-grid > .jobs p { font-size: var(--text-md); color: var(--color-ink-2); }
+@media (max-width: 60rem) { .cs-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); } }
