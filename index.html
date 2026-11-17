@@ -18,6 +18,7 @@
   <a class="wordmark" href="./">Angelica Carrillo</a>
   <nav class="nav-links" aria-label="Main">
    <a class="hide-s" href="#steps-section">Each step</a>
+   <a class="hide-s" href="#engage">Outreach plan</a>
    <a class="hide-s" href="#task-2">One founder</a>
    <a class="btn" href="why-hire-me/">Why hire me</a>
   </nav>
@@ -101,9 +102,39 @@
    <div><p class="filter-label">Relationship</p><div class="chips" id="relChipsT" role="group" aria-label="Filter partners by relationship"></div></div>
   </div>
   <div class="tablewrap"><table>
-   <thead><tr><th>Partner</th><th>Type</th><th>Tier</th><th>Region fit</th><th>Why them</th></tr></thead>
+   <thead><tr><th>Partner</th><th>Type</th><th>Tier</th><th>Region fit</th><th>Why them</th><th>Outreach</th></tr></thead>
    <tbody id="ptable"></tbody>
   </table></div>
+ </div>
+</section>
+
+<section id="engage" class="section band-2">
+ <div class="container">
+  <div class="head"><h2>How I’d engage the whole list</h2><p class="lead">Warm first, so the early yeses become proof I can name in every cold message after.</p></div>
+  <ol class="plan">
+   <li><b>Week 1, warm</b><p>SoGal, Cibersons, GANAS, WeXchange and Lovable, plus a friend at Replit for extra founder credits. Goal: four or more yeses before anyone cold hears from me.</p></li>
+   <li><b>Weeks 2 to 3, intros</b><p>Amplifica, MAYA, Impacta, Kaszek, Start-Up Chile and Google for Startups, each through the person in my network who knows them.</p></li>
+   <li><b>Weeks 3 to 4, cold</b><p>EWA, Cartier, Anthropic and Nubank. Every message opens with a real founder in their thesis and names the partners already in.</p></li>
+  </ol>
+  <div class="engage-grid">
+   <div>
+    <h3>Follow-up</h3>
+    <p>Day 0 the message, day 4 a nudge that adds value (two lines on one founder in their thesis), day 10 one clear ask for 20 minutes. No reply means I park them for 60 days and reopen with the next regional shortlist. Once a partner says yes: a monthly digest of three to five founders filtered to their thesis, a quarterly invite to the regional deep-dive, and no more than one direct intro a month, so every intro stays worth opening.</p>
+   </div>
+   <div>
+    <h3>The system</h3>
+    <p>A partner newsletter in ActiveCampaign or Kit, so I can see who opens. Automations push the ones who don’t: a resend with a new subject, then a personal follow-up. In LATAM what works best is WhatsApp, so I message each contact there and confirm their phone and email to keep the list clean. Every partner sits in a personal CRM, the same way I ran Andrés Bilbao’s 100+ company portfolio, tagged by sector, stage, check size, country and role, so matching a founder to investors is a filter.</p>
+   </div>
+   <div>
+    <h3>Full coverage, six months in</h3>
+    <ul class="coverage">
+     <li>Mexico, Colombia, Brazil, Chile, the Andes and Central America each have two active capital partners and one pipeline partner.</li>
+     <li>Every Aurora sector has at least two investors whose thesis matches.</li>
+     <li>Every regional finalist gets three or more qualified investor meetings within 30 days of the shortlist.</li>
+     <li>A monthly report: active partners, meetings per founder and follow-on capital raised by Aurora alumnae.</li>
+    </ul>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -151,6 +182,13 @@
  </div>
 </section>
 </main>
+<dialog id="msgDialog" class="msg-dialog" aria-labelledby="dlgName">
+ <div class="dlg-head"><h3 id="dlgName"></h3><button class="chip" id="dlgClose" aria-label="Close">Close</button></div>
+ <p id="dlgMeta" class="dlg-meta"></p>
+ <p id="dlgMsg" class="msg"></p>
+ <button class="btn" id="dlgCopy">Copy message</button>
+</dialog>
+
 
 <footer class="footer">
  <div class="container">
@@ -171,7 +209,7 @@ const CAT={VC:"VC fund",GL:"Women-focused VC",IMP:"Impact fund",CVC:"Corporate V
 const REL={W:"Warm",N:"Intro via network",C:"Cold"};
 const WOMEN=new Set(["Amplifica Capital","EWA Capital","Orchestra HER","WE Ventures","New Ventures (Empodera)","Epic Angels","CATAL1.5T","Hub APTA","WeXchange (IDB Lab)","Techstars Founder Catalyst","Google for Startups – Women Founders","Female Force LATAM","Female Scale","WFintech","Emma Project","WE Impact","Mulheres Inovadoras","eNOVADORAS","Start Path Empodera","Women in Ocean Food","Bayer Foundation Women Award","Cartier Women's Initiative","MAYA Capital","SoGal Ventures","Anthemis Female Innovators Lab"]);
 const D=`
-Amplifica Capital|GL|Mexico|W
+Amplifica Capital|GL|Mexico|N
 EWA Capital|GL|Colombia|C
 Orchestra HER|GL|Mexico|C
 WE Ventures|GL|Brazil|C
@@ -491,7 +529,7 @@ render();
 // partner table
 const P=[
  ["SoGal Ventures","VC fund","1","US → LATAM cross-border","Leads pre-seed and seed for women and diverse founders; just backed Collective X. I'm an LP.","W"],
- ["Amplifica Capital","Women-focused VC","1","Mexico, all LATAM","95% of its portfolio is female-founded; checks of $100K–500K.","W"],
+ ["Amplifica Capital","Women-focused VC","1","Mexico, all LATAM","95% of its portfolio is female-founded; checks of $100K–500K.","N"],
  ["EWA Capital","Women-focused VC","1","Spanish-speaking LATAM","$24M Fund II, at least 40% to gender-smart companies.","C"],
  ["MAYA Capital","VC fund","1","Brazil, expanding to Spanish LATAM","Leads first checks; runs Female Force for women founders. Both founders are in my network.","N"],
  ["Impacta VC","Impact fund","1","Chile, regional","Led Quipu's 2026 round, Aurora's 2026 winner. Its CEO is in my network.","N"],
@@ -504,15 +542,21 @@ const P=[
  ["Anthropic","Global tech partner","3","Global","Claude credits and AI tooling for founders building AI products.","C"],
  ["Google for Startups","Global tech partner","3","LATAM women founders track","Cloud credits and accelerators; Arkangel AI is an alumna.","N"],
  ["Lovable","Global tech partner","3","Global","Build-with-AI credits; I closed a perks deal with them before.","W"],
- ["Replit","Global tech partner","3","Global","Lets non-technical founders ship prototypes fast.","C"],
  ["Nubank","Global tech partner","3","Brazil, Mexico, Colombia","LATAM's largest digital bank: fintech partnerships, distribution and a founder-angel network.","C"]
 ];
+const MSG={"SoGal Ventures": {"rel": "Warm", "ch": "WhatsApp, then email", "msg": "Hi [name]! I've joined Aurora Tech Award, inDrive's prize for women founders in emerging markets, to build their LATAM investor bench. Aurora now writes the first check, and I want SoGal seeing the best founders right after that, before anyone else. First up: a Colombian health-AI founder who fits your \"staying healthy\" thesis. Open to a 20-min call next week?"}, "Amplifica Capital": {"rel": "Intro via network", "ch": "Email, via Pocket Sun at SoGal", "msg": "Hi [name], thanks to Pocket Sun for connecting us. You said you want to be the fund the best women founders in LATAM reach out to first. Aurora sees a big share of them: thousands of applicants a year, scored by VCs. I'd like to route the ones in your sectors to you before our regional list goes public. Worth a call?"}, "EWA Capital": {"rel": "Cold", "ch": "Email", "msg": "Subject: Gender-smart deal flow from Aurora, LATAM\n\nHi [name], congrats on closing Fund II. Your 40% gender-smart commitment overlaps with Aurora's pipeline: our 2026 finalists include Pilou, a Mexican wealth-tech built for women investors. Aurora now writes first checks and looks for co-investors in the next round. 20 minutes to compare notes?"}, "MAYA Capital": {"rel": "Intro via network", "ch": "Email, after a mutual intro", "msg": "Hi [name], thanks to [mutual] for connecting us. With MAYA expanding into Spanish-speaking LATAM, Aurora could be a useful bridge: 8 of our 10 2026 finalists are LATAM founders, half of them from Colombia. Would you or the Female Force team join as a judge for our next regional cycle?"}, "Impacta VC": {"rel": "Intro via network", "ch": "Email, after a mutual intro", "msg": "Hi [name], you led Quipu's round, and Quipu just won the Aurora Tech Award. Since we're already backing the same founders, should we make it systematic? I'd love to cross-refer between Aurora and your fundraising program, and invite one of your women ambassadors to judge."}, "Cibersons": {"rel": "Warm", "ch": "WhatsApp", "msg": "Hola [name]! I'm building Aurora Tech Award's LATAM investor network. Aurora now writes the first check for women founders in emerging markets, and you invest in startups and in funds, so you can play both sides with us. Can I send you our next LATAM shortlist before it goes public, and grab 20 minutes on where Aurora's capital goes next?"}, "Kaszek": {"rel": "Intro via network", "ch": "Email, after a mutual intro", "msg": "Hi [name], thanks to [mutual] for connecting us. Kaszek is where the best LATAM companies go for their Series A, and Aurora is where many of the region's best women founders show up first: 3,400 applications last cycle, scored by 40+ VCs. I'd like Kaszek on our early-access list so you meet them two rounds before everyone else. Open to 20 minutes?"}, "GANAS": {"rel": "Warm", "ch": "WhatsApp", "msg": "[name], I'm back in founder land, now with Aurora Tech Award (women founders, emerging markets). I'd love GANAS to get first look at our top LATAM founders each quarter, and to refer founders our way. Quick call this week?"}, "Start-Up Chile": {"rel": "Intro via network", "ch": "Email", "msg": "Hi [name], Aurora held its 2026 final in Santiago, and many of our Chilean finalists overlap with Female Founder Factor. Can we cross-promote applications, and offer your women founders a fast-track review in our next cycle?"}, "WeXchange (IDB Lab)": {"rel": "Warm", "ch": "Email", "msg": "Hi [name], WeXchange and Aurora keep finding the same founders; Morado was in both. Could we align calendars so finalists from one get introduced to the other's investor network?"}, "Cartier Women's Initiative": {"rel": "Cold", "ch": "Email", "msg": "Subject: Aurora alumnae for the Cartier Women's Initiative\n\nHi [name], ELSA from Peru won with you in 2024, and Aurora meets founders like her every cycle across Latin America. Our alumnae with revenue are ready for your program. Could we set up a referral path, so our strongest finalists apply with a nomination behind them?"}, "Anthropic": {"rel": "Cold", "ch": "Email", "msg": "Subject: Claude credits for women founders in emerging markets\n\nHi [name], Aurora Tech Award backs women founders in emerging markets, and most of our finalists now build with AI. I'd love to offer Claude credits to each regional cycle's finalists, with Anthropic featured at our regional deep-dives. Who's the right person for startup programs in LATAM?"}, "Google for Startups": {"rel": "Intro via network", "ch": "Email, warm path via Arkangel AI", "msg": "Hi [name], Arkangel AI went through your Canada accelerator and placed 4th at Aurora 2025. We'd love to route more founders like her to Google for Startups, and to offer Cloud credits to our regional finalists. Who's the right person on the LATAM side?"}, "Lovable": {"rel": "Warm", "ch": "WhatsApp", "msg": "Hi [name], we did a great perks deal for Fundraising School. Want to do the same for Aurora's women founders across LATAM, Africa and Asia? Happy to feature Lovable at our regional deep-dive."}, "Nubank": {"rel": "Cold", "ch": "LinkedIn", "msg": "Hi [name], Nubank proved LATAM customers will trust a fintech built for them. Aurora backs the women building the next wave: Quipu, our 2026 winner, scores credit for the informal economy. Would Nubank partner with us, through fintech mentors, distribution pilots or angels from your founder network?"}};
 const types=[...new Set(P.map(p=>p[1]))];let tSel=null;
 const tc=document.getElementById("typeChips");
 ["All",...types].forEach(t=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.setAttribute("aria-pressed",t==="All");b.onclick=()=>{tSel=t==="All"?null:t;tc.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.textContent===(tSel||"All")));drawP()};tc.appendChild(b)});
-function drawP(){document.getElementById("ptable").innerHTML=P.filter(p=>(!tSel||p[1]===tSel)&&(relSelT==="all"||p[5]===relSelT)).map(p=>`<tr><td class="name">${p[0]}</td><td>${p[1]}</td><td><span class="tier t${p[2]}">Tier ${p[2]}</span></td><td>${p[3]}</td><td>${p[4]}</td></tr>`).join("")}
+function drawP(){document.getElementById("ptable").innerHTML=P.filter(p=>(!tSel||p[1]===tSel)&&(relSelT==="all"||p[5]===relSelT)).map(p=>`<tr><td class="name">${p[0]}</td><td>${p[1]}</td><td><span class="tier t${p[2]}">Tier ${p[2]}</span></td><td>${p[3]}</td><td>${p[4]}</td><td><button class="chip msg-btn" data-p="${p[0]}">Read message</button></td></tr>`).join("")}
 relChips("relChipsT",()=>relSelT,k=>{relSelT=k},()=>drawP());
 drawP();
+const dlg=document.getElementById("msgDialog");
+document.getElementById("ptable").addEventListener("click",e=>{const b=e.target.closest(".msg-btn");if(!b)return;const m=MSG[b.dataset.p];document.getElementById("dlgName").textContent=b.dataset.p;document.getElementById("dlgMeta").textContent=m.rel+", "+m.ch;document.getElementById("dlgMeta").dataset.rel=m.rel;document.getElementById("dlgMsg").textContent=m.msg;dlg.showModal()});
+document.getElementById("dlgClose").addEventListener("click",()=>dlg.close());
+if(location.hash==="#demo-msg"){document.querySelector(".msg-btn").click()}
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+document.getElementById("dlgCopy").addEventListener("click",async e=>{try{await navigator.clipboard.writeText(document.getElementById("dlgMsg").textContent);e.target.textContent="Copied"}catch(err){e.target.textContent="Select and copy"}setTimeout(()=>{e.target.textContent="Copy message"},1600)});
 
 // task 2
 const S=[
