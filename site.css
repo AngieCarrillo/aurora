@@ -231,3 +231,24 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
 .coverage { margin: 0; padding-left: var(--space-md); display: grid; gap: var(--space-xs); }
 @media (max-width: 60rem) { .engage-grid { grid-template-columns: minmax(0, 1fr); } }
 .msg-btn { white-space: nowrap; }
+/* hero v3: intro and self-assessment on top, then filters, map and country list at one height */
+.hero-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: start; padding-bottom: var(--space-xl); margin-bottom: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.hero-top .hero-intro { display: grid; gap: var(--space-lg); grid-template-columns: minmax(0, 1fr); }
+.hero-top .hero-intro h1 { grid-column: auto; max-width: 20ch; }
+.hero-top .hero-thesis { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
+.hero-top .jobs { grid-template-columns: repeat(2, minmax(0, 1fr)); display: grid; gap: var(--gap-columns); }
+.hero-top .assess { border-top: 2px solid var(--color-ink); border-bottom: 0; padding-top: var(--space-md); }
+.hero-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); align-items: stretch; }
+.filters-col { display: grid; gap: var(--space-lg); align-content: start; }
+.hero-grid .panel { max-height: calc(100dvh - var(--nav-h) - 48px); min-height: 0; padding-left: var(--space-lg); border-left: var(--rule-hair) solid var(--color-rule); border-top: 0; padding-top: 0; }
+@media (max-width: 75rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .filters-col { grid-column: 1 / -1; }
+}
+@media (max-width: 60rem) {
+  .hero-top, .hero-top .jobs, .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .hero-grid .panel { max-height: none; padding-left: 0; border-left: 0; border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-lg); }
+}
+.hero-grid .mapbox { align-content: start; }
+.hero-grid .panel { max-height: none; height: 100%; contain: size; overflow: auto; }
+@media (max-width: 60rem) { .hero-grid .panel { contain: none; height: auto; max-height: 70dvh; } }
