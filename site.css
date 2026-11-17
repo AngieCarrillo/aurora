@@ -241,7 +241,7 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
 .hero-top .hero-intro { display: grid; gap: var(--space-lg); grid-template-columns: minmax(0, 1fr); }
 .hero-top .hero-intro h1 { grid-column: auto; max-width: 20ch; }
 .hero-top .hero-thesis { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
-.hero-top .jobs { grid-template-columns: repeat(2, minmax(0, 1fr)); display: grid; gap: var(--gap-columns); }
+.cs .jobs { grid-template-columns: repeat(2, minmax(0, 1fr)); display: grid; gap: var(--gap-columns); }
 .hero-top .assess { border-top: 2px solid var(--color-ink); border-bottom: 0; padding-top: var(--space-md); }
 .hero-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); align-items: stretch; }
 .filters-col { display: grid; gap: var(--space-lg); align-content: start; }
@@ -251,19 +251,19 @@ td.name { font-family: var(--font-display); font-size: var(--text-xl); font-weig
   .filters-col { grid-column: 1 / -1; }
 }
 @media (max-width: 60rem) {
-  .hero-top, .hero-top .jobs, .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .hero-top, .cs .jobs, .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   .hero-grid .panel { max-height: none; padding-left: 0; border-left: 0; border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-lg); }
 }
 .hero-grid .mapbox { align-content: start; }
 .hero-grid .panel { max-height: none; height: 100%; contain: size; overflow: auto; }
 @media (max-width: 60rem) { .hero-grid .panel { contain: none; height: auto; max-height: 70dvh; } }
-.hero-top .jobs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 60rem) { .hero-top .jobs { grid-template-columns: minmax(0, 1fr); } }
-.hero-top > .jobs { grid-column: 1 / -1; margin-top: var(--space-xs); }
-.hero-top > .jobs li { padding-top: var(--space-sm); border-top-width: 1px; }
-.hero-top > .jobs li::before { font-size: var(--text-xl); line-height: 1; }
-.hero-top > .jobs h3 { font-size: var(--text-lg); margin-bottom: var(--space-2xs); }
-.hero-top > .jobs p { font-size: var(--text-sm); color: var(--color-ink-2); }
+.cs .jobs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 60rem) { .cs .jobs { grid-template-columns: minmax(0, 1fr); } }
+.cs > .jobs { grid-column: 1 / -1; margin-top: var(--space-xs); }
+.cs > .jobs li { padding-top: var(--space-sm); border-top-width: 1px; }
+.cs > .jobs li::before { font-size: var(--text-xl); line-height: 1; }
+.cs > .jobs h3 { font-size: var(--text-lg); margin-bottom: var(--space-2xs); }
+.cs > .jobs p { font-size: var(--text-sm); color: var(--color-ink-2); }
 .hero-top { row-gap: var(--space-xl); }
 svg.map path.sel { fill: var(--color-aurora-blue) !important; }
 svg.map text.on-sel { fill: var(--color-on-ink); }
@@ -274,7 +274,11 @@ svg.map text.on-sel { fill: var(--color-on-ink); }
 .act b { grid-row: span 2; font-family: var(--font-display); font-weight: 400; font-size: var(--text-xl); line-height: 1; font-variant-numeric: var(--nums-display); }
 .act span { font-weight: 600; font-size: var(--text-sm); color: var(--color-ink); }
 .act small { font-size: var(--text-xs); color: var(--color-muted); }
-.hero-top > .jobs .act li { counter-increment: none; display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); column-gap: var(--space-sm); gap: 0 var(--space-sm); padding: var(--space-xs) 0; border-top: 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
-.hero-top > .jobs .act li::before { content: none; }
-.hero-top > .jobs .act small { font-size: var(--text-xs); color: var(--color-muted); }
-.hero-top > .jobs > li { border-top: 0; padding-top: 0; }
+.cs > .jobs .act li { counter-increment: none; display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); column-gap: var(--space-sm); gap: 0 var(--space-sm); padding: var(--space-xs) 0; border-top: 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.cs > .jobs .act li::before { content: none; }
+.cs > .jobs .act small { font-size: var(--text-xs); color: var(--color-muted); }
+.cs > .jobs > li { border-top: 0; padding-top: 0; }
+.cs { display: grid; gap: var(--space-xl); }
+.cs .thesis-line { font-size: var(--text-section); line-height: 1.1; max-width: 26ch; }
+.cs-section { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.hero-top { align-items: end; }
