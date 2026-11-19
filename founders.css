@@ -98,3 +98,6 @@ svg.globe:active { cursor: grabbing; }
 .msg-examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); }
 .msg-examples .msg { white-space: pre-wrap; }
 .eyebrow-task { font-size: var(--text-sm); font-weight: 700; color: var(--color-muted); margin-bottom: var(--space-xs); }
+
+.player .terms{display:block;font-size:12px;font-weight:600;color:var(--color-ink);margin-top:2px}
+.chip-lead{margin-left:.5rem}
